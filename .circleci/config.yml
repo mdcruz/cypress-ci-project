@@ -1,0 +1,25 @@
+version: 2.1
+jobs:
+  run_cypress_tests:
+    docker:
+      - image: cypress/base:12.16.1
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm i
+      - run:
+          name: Run Cypress Tests
+          command: npm test
+      - run:
+          name: Generate Mochawesome Report
+          command: npm run generate:html:report
+      - store_artifacts:
+          path: TestReport
+      - store_artifacts:
+          path: cypress/videos
+
+workflows:
+  build:
+    jobs: 
+      - run_cypress_tests

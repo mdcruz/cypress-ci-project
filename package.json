@@ -1,7 +1,7 @@
 {
   "name": "cypress-ci-project",
   "version": "1.0.0",
-  "description": "Sample project to demo Cypress running in CircleCI",
+  "description": "Sample project to demo Cypress running in CircleV",
   "main": "index.js",
   "scripts": {
     "clean:reports": "rm -rf mochawesome-report/",
