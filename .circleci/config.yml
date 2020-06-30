@@ -12,3 +12,5 @@ workflows:
               command: npm run generate:html:report
           - store_artifacts:
               path: cypress/videos
+          - store_artifacts:
+              path: TestReport
