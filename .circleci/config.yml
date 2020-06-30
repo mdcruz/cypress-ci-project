@@ -6,3 +6,9 @@ workflows:
     jobs:
       - cypress/run:
           name: Run E2E tests
+          post-steps:
+          - run: 
+              name: Generate Mochawesome report
+              command: npm run generate:html:report
+          - store_artifacts:
+              path: cypress/videos
